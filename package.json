@@ -36,13 +36,5 @@
     "vite": "^3.1.0",
     "vitest": "^0.24.1",
     "vue-tsc": "^0.40.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,vue}": "eslint --fix"
   }
 }
