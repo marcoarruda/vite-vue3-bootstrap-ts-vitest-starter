@@ -1,4 +1,9 @@
-# Vue 3 + TypeScript + Vite
+# Vue 3 + TypeScript + Vite + Bootstrap Vue 3 + Vitest + ESLint + Prettier + Husky
+
+## References
+
+- [Bootstrap Vue 3](https://cdmoro.github.io/bootstrap-vue-3/)
+- [How to configure ESLint, Prettier and Husky](https://dev.to/christiantld/configurando-um-projeto-vue-3-vite-typescript-eslint-tailwind-4hoi)
 
 This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
