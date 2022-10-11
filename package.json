@@ -9,7 +9,8 @@
     "test": "vitest",
     "coverage": "vutest run --coverage",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
