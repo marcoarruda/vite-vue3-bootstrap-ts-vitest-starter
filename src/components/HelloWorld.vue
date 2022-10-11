@@ -1,22 +1,23 @@
 <template>
-  <p>{{ msg }}</p>
+  <p>{{ message }} ({{ count }})</p>
+  <BButton ref="btnIncrement" @click="increment()">Increment</BButton>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
+import { BButton } from 'bootstrap-vue-3';
+import { ref } from "vue";
 
-export default defineComponent({
-  name: "HelloWorld",
-  props: {
-    message: {
-      type: String,
-      default: "World",
-    },
-  },
-  setup(props) {
-    return {
-      msg: props.message,
-    };
-  },
-});
+export interface Props {
+  message?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  message: 'Hello world'
+})
+
+const count = ref(0)
+
+const increment = () => {
+  count.value++
+}
 </script>
