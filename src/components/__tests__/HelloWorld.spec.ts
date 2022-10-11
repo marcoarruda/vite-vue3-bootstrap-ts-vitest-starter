@@ -1,32 +1,28 @@
-import { mount } from "@vue/test-utils"
+import { BootstrapVue3 } from 'bootstrap-vue-3'
+import { mount, VueWrapper } from "@vue/test-utils"
 import HelloWorld from "src/components/HelloWorld.vue"
-import { describe, expect, it } from "vitest"
+import { beforeAll, describe, expect, it } from "vitest"
 
 describe("HelloWorld.vue", () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let wrapper: VueWrapper<any>
 
-  it("should renders is page content is correct", () => {
-    const message = "Happy People"
-    const testMessage = "Happy People"
-    const wrapper = mount(HelloWorld, {
+  const message = 'Happy people'
+
+  beforeAll(() => {
+    wrapper = mount(HelloWorld, {
       props: { message },
+      global: {
+        plugins: [BootstrapVue3],
+      },
     })
-
-    expect(wrapper.text()).toContain(testMessage)
   })
 
-  it("should render if props value is correct", () => {
-    const message = "Happy People"
-    const testMessage = "Happy People"
-    const wrapper = mount(HelloWorld, {
-      props: { message },
-    })
-
-    expect(wrapper.vm.message).toBe(testMessage)
+  it("should renders page content correctly", () => {
+    expect(wrapper.text()).toContain(message)
   })
 
   it('should increment counter when btnIncrement is pressed', () => {
-    const wrapper = mount(HelloWorld)
-
     wrapper.findComponent({ ref: 'btnIncrement' }).trigger('click')
 
     expect(wrapper.vm.count).toBe(1)

@@ -1,10 +1,10 @@
 <template>
   <p>{{ message }} ({{ count }})</p>
+
   <BButton ref="btnIncrement" @click="increment()"> Increment </BButton>
 </template>
 
 <script lang="ts" setup>
-  import { BButton } from 'bootstrap-vue-3'
   import { ref } from 'vue'
 
   export interface Props {
